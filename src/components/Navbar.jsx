@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     const scrollSection = (sectionId) => {
@@ -25,12 +26,12 @@ export default function Navbar() {
 
         {/* Botones */}
         <div className="hidden md:flex gap-3">
-          <button className="border border-blue-600 px-4 py-1 rounded-lg text-blue-600">
+          <Link to="/login" className="border border-blue-600 px-4 py-1 rounded-lg text-blue-600 flex items-center justify-center">
             Agendar Cita
-          </button>
-          <button className="bg-blue-600 text-white px-4 py-1 rounded-lg">
+          </Link>
+          <Link to="/login" className="bg-blue-600 text-white px-4 py-1 rounded-lg flex items-center justify-center">
             Iniciar Sesión
-          </button>
+          </Link>
         </div>
 
         {/* Menu Hamburguesa */}
@@ -43,10 +44,12 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-white px-6 pb-4">
           <ul className="flex flex-col gap-4 text-gray-700">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/about">Sobre Nosotros</a></li>
-            <li><a href="/services">Servicios</a></li>
-            <li><a href="/team">Nuestro Equipo</a></li>
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/about">Sobre Nosotros</Link></li>
+            <li><Link to="/services">Servicios</Link></li>
+            <li><Link to="/team">Nuestro Equipo</Link></li>
+            <li><Link to="/login">Iniciar Sesión</Link></li>
+            <li><Link to="/register">Registrarse</Link></li>
           </ul>
         </div>
       )}

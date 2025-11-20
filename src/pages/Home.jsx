@@ -1,6 +1,11 @@
 import { HeartHandshake, Award, UserCircle, ShieldCheck } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
+  const handleLoginRedirect = () => {
+    navigate("/login");
+  };
   return (
     <main className="bg-blue-50">
 
@@ -15,7 +20,10 @@ export default function Home() {
               Cuidamos de tu salud dental con atención profesional y personalizada.
             </p>
             <div className="mt-6 flex gap-4">
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition">
+              <button
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition"
+                onClick={handleLoginRedirect}
+              >
                 Agendar Cita
               </button>
               <button className="border border-blue-600 px-6 py-2 rounded-lg hover:bg-blue-100 transition">
